@@ -42,7 +42,7 @@ export default function WebSocketUrlField() {
         helperText={testWebSocket(websocket_url) ? 'Invalid websocket URL' : ''}
       />
       <Link href={`/?websocket_url=${websocket_url}`}>
-        viewer.nerf.studio?websocket_url={websocket_url}
+        viewer.soar3dsandbox.io?websocket_url={websocket_url}
       </Link>
     </div>
   );
