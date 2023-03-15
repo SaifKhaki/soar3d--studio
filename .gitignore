@@ -13,6 +13,8 @@ develop-eggs/
 dist/
 downloads/
 !scripts/downloads/
+
+colab
 eggs/
 .eggs/
 lib/
