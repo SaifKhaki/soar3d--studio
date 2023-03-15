@@ -5,9 +5,9 @@ import { useSelector } from 'react-redux';
 
 import { Box, Typography, Tab, Tabs } from '@mui/material';
 import { LevaPanel, LevaStoreProvider, useCreateStore } from 'leva';
-import BlurOnIcon from '@mui/icons-material/BlurOn';
-import CategoryIcon from '@mui/icons-material/Category';
-import PointcloudSubPanel from './PointcloudSubPanel';
+// import BlurOnIcon from '@mui/icons-material/BlurOn';
+// import CategoryIcon from '@mui/icons-material/Category';
+// import PointcloudSubPanel from './PointcloudSubPanel';
 import MeshSubPanel from './MeshSubPanel';
 import LevaTheme from '../../../themes/leva_theme.json';
 
@@ -51,7 +51,7 @@ export default function ExportPanel(props) {
   const sceneTree = props.sceneTree;
   const showExportBox = props.showExportBox;
 
-  const [type_value, setTypeValue] = React.useState(0);
+  const [type_value, setTypeValue] = React.useState(1);
 
   const handleTypeChange = (event: React.SyntheticEvent, newValue: number) => {
     setTypeValue(newValue);
@@ -81,7 +81,7 @@ export default function ExportPanel(props) {
     box.scale.set(value[0], value[1], value[2]);
   };
 
-  const pointcloudStore = useCreateStore();
+  // const pointcloudStore = useCreateStore();
   const meshStore = useCreateStore();
 
   return (
@@ -95,36 +95,11 @@ export default function ExportPanel(props) {
         sx={{ height: 55, minHeight: 55 }}
       >
         <Tab
-          icon={<BlurOnIcon />}
-          iconPosition="start"
-          label="Point Cloud"
-          disableRipple
-          {...a11yProps(0)}
-        />
-        <Tab
-          icon={<CategoryIcon />}
-          iconPosition="start"
-          label="Mesh"
+          label="Mesh Export"
           disableRipple
           {...a11yProps(1)}
         />
       </Tabs>
-      <TabPanel value={type_value} index={0}>
-        <LevaPanel
-          store={pointcloudStore}
-          className="Leva-panel"
-          theme={LevaTheme}
-          titleBar={false}
-          fill
-          flat
-        />
-        <LevaStoreProvider store={pointcloudStore}>
-          <PointcloudSubPanel
-            update_box_center={update_box_center}
-            update_box_scale={update_box_scale}
-          />
-        </LevaStoreProvider>
-      </TabPanel>
       <TabPanel value={type_value} index={1}>
         <LevaPanel
           store={meshStore}

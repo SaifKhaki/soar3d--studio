@@ -3,7 +3,6 @@ import * as React from 'react';
 
 import {
   Box,
-  Button,
   Modal,
   Typography,
   Tabs,
@@ -14,6 +13,7 @@ import {
 import ContentCopyRoundedIcon from '@mui/icons-material/ContentCopyRounded';
 
 import WebSocketUrlField from '../WebSocketUrlField';
+import img from '../img/logo-dark.png';
 
 interface LandingModalProps {
   initial_state: object;
@@ -53,7 +53,6 @@ function a11yProps(index: number) {
 
 export default function LandingModel(props: LandingModalProps) {
   const [open, setOpen] = React.useState(props.initial_state);
-  const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
   const text_intro = `To use our viewer, you need to connect to the WebSocket server where your training job is running. Enter your WebSocket URL below and click the link to connect to your training job.`;
@@ -82,14 +81,6 @@ export default function LandingModel(props: LandingModalProps) {
 
   return (
     <div className="LandingModal">
-      <Button
-        className="banner-button"
-        variant="outlined"
-        size="small"
-        onClick={handleOpen}
-      >
-        Getting Started
-      </Button>
       <Modal
         open={open}
         onClose={handleClose}
@@ -100,7 +91,7 @@ export default function LandingModel(props: LandingModalProps) {
           <center>
             <img
               style={{ height: 37, margin: 'auto' }}
-              src="https://docs.nerf.studio/en/latest/_images/logo-dark.png"
+              src={img}
               alt="The favicon."
             />
           </center>

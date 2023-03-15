@@ -3,6 +3,7 @@ import * as React from 'react';
 
 import { Box, Button, Modal } from '@mui/material';
 import KeyboardIcon from '@mui/icons-material/Keyboard';
+import img from '../img/logo-dark.png';
 
 export default function ControlsModal() {
   const [open, setOpen] = React.useState(false);
@@ -30,7 +31,8 @@ export default function ControlsModal() {
           <center>
             <img
               style={{ height: 37, margin: 'auto' }}
-              src="https://docs.nerf.studio/en/latest/_images/logo-dark.png"
+              // src="https://docs.nerf.studio/en/latest/_images/logo-dark.png"
+              src={img}
               alt="The favicon."
             />
             <img

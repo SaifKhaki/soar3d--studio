@@ -1,59 +1,22 @@
 import * as THREE from 'three';
 
 import React, { useContext, useEffect, useRef } from 'react';
-import { SelectChangeEvent } from '@mui/material/Select';
-import { useDispatch, useSelector } from 'react-redux';
+import {  useSelector } from 'react-redux';
 
-import { IconButton, ToggleButtonGroup, ToggleButton } from '@mui/material';
+
 import OpenWithIcon from '@mui/icons-material/OpenWith';
 import PublicOffSharpIcon from '@mui/icons-material/PublicOffSharp';
 import PublicSharpIcon from '@mui/icons-material/PublicSharp';
 import SyncOutlinedIcon from '@mui/icons-material/SyncOutlined';
-import ThreeDRotationIcon from '@mui/icons-material/ThreeDRotation';
-import VideoCameraBackIcon from '@mui/icons-material/VideoCameraBackOutlined';
+import { IconButton } from '@mui/material';
+// import ThreeDRotationIcon from '@mui/icons-material/ThreeDRotation';
+// import VideoCameraBackIcon from '@mui/icons-material/VideoCameraBackOutlined';
+import WebRtcWindow from '../WebRtcWindow/WebRtcWindow';
 import { WebSocketContext } from '../WebSocket/WebSocket';
-import RenderWindow from '../RenderWindow/RenderWindow';
 
 const msgpack = require('msgpack-lite');
 
-function CameraToggle() {
-  const dispatch = useDispatch();
-  const camera_choice = useSelector(
-    (state) => state.renderingState.camera_choice,
-  );
-  const set_camera_choice = (event: SelectChangeEvent, value: string[]) => {
-    if (value != null) {
-      dispatch({
-        type: 'write',
-        path: 'renderingState/camera_choice',
-        data: value,
-      });
-    }
-  };
-
-  return (
-    <ToggleButtonGroup
-      value={camera_choice}
-      exclusive
-      onChange={set_camera_choice}
-      aria-label="camera view"
-      size="small"
-    >
-      <ToggleButton value="Main Camera" disableRipple sx={{ width: '160px' }}>
-        <ThreeDRotationIcon fontSize="small" sx={{ mr: 1, ml: -0.5 }} />
-        Viewport
-      </ToggleButton>
-      <ToggleButton value="Render Camera" disableRipple sx={{ width: '160px' }}>
-        <VideoCameraBackIcon
-          value="Render Camera"
-          fontSize="small"
-          sx={{ mr: 1, ml: 0.5 }}
-        />
-        Render View
-      </ToggleButton>
-    </ToggleButtonGroup>
-  );
-}
+function CameraToggle() {};
 
 function TransformIcons(props) {
   const sceneTree = props.sceneTree;
@@ -100,7 +63,7 @@ function TransformIcons(props) {
   );
 }
 
-// manages a camera
+// manages a camera and the web rtc stream...
 export default function ViewerWindow(props) {
   const sceneTree = props.sceneTree;
   const scene = sceneTree.object;
@@ -274,7 +237,8 @@ export default function ViewerWindow(props) {
 
   return (
     <>
-      <RenderWindow />
+      {/* the webrtc viewer needs to know the camera pose */}
+      <WebRtcWindow />
       <div className="canvas-container-main" ref={myRef}>
         <div className="ViewerWindow-camera-toggle">
           <CameraToggle />

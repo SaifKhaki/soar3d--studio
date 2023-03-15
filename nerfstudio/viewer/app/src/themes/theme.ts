@@ -3,10 +3,10 @@ import { createTheme } from '@mui/material/styles';
 export const appTheme = createTheme({
   palette: {
     primary: { main: '#EEEEEE' },
-    secondary: { main: '#FFD369' },
+    secondary: { main: '#7680FF' },
     text: {
       primary: '#EEEEEE',
-      secondary: '#FFD369',
+      secondary: '#7680FF',
       disabled: '#555555',
     },
   },
@@ -32,7 +32,7 @@ export const appTheme = createTheme({
             color: '#999999',
           },
           '& label.Mui-focused': {
-            color: '#FFD369',
+            color: '#7680FF',
           },
           '& .MuiOutlinedInput-root': {
             '& fieldset': {
@@ -42,7 +42,7 @@ export const appTheme = createTheme({
               borderColor: '#dddddd',
             },
             '&.Mui-focused fieldset': {
-              borderColor: '#FFD369',
+              borderColor: '#7680FF',
             },
           },
         },
@@ -67,7 +67,7 @@ export const appTheme = createTheme({
           color: '#eeeeee',
           backgroundColor: '#393e46',
           '&:hover': {
-            color: '#FFD369',
+            color: '#7680FF',
             backgroundColor: '#555555',
           },
         },
@@ -105,7 +105,7 @@ export const appTheme = createTheme({
             borderBottom: '2px solid #555555',
           },
           '&:after': {
-            borderBottom: '2px solid #FFD369',
+            borderBottom: '2px solid #7680FF',
           },
         },
       },
@@ -129,9 +129,9 @@ export const appTheme = createTheme({
           backgroundColor: 'FFD369',
           '&.Mui-selected': {
             color: '#222831',
-            backgroundColor: '#FFD369',
+            backgroundColor: '#7680FF',
             ':hover': {
-              backgroundColor: '#FFD369',
+              backgroundColor: '#7680FF',
             },
           },
           '&.Mui-disabled': {

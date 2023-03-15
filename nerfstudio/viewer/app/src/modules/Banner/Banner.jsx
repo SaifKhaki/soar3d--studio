@@ -1,11 +1,11 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-
 import Button from '@mui/material/Button';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import DescriptionRoundedIcon from '@mui/icons-material/DescriptionRounded';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import img from '../img/logo-dark.png';
 import LandingModal from '../LandingModal';
 import ViewportControlsModal from '../ViewportControlsModal';
+
 
 function getParam(param_name) {
   // https://stackoverflow.com/questions/831030/how-to-get-get-request-parameters-in-javascript
@@ -32,37 +32,38 @@ export default function Banner() {
       path: 'websocketState/websocket_url',
       data: websocket_url_from_argument,
     });
+
+
   }
+
+
 
   return (
     <div className="banner">
       <LandingModal initial_state={open_modal} />
+
       <Button // button with view in ar icon
         className="banner-button"
         variant="outlined"
-        startIcon={<GitHubIcon />}
+        startIcon={<ArrowBackIcon />}
         target="_blank"
-        href="https://github.com/nerfstudio-project/nerfstudio"
+        href="link not set yet"
         size="small"
       >
-        Github
+        back to scan select
       </Button>
-      <Button // button with view in ar icon
-        className="banner-button"
-        variant="outlined"
-        startIcon={<DescriptionRoundedIcon />}
-        target="_blank"
-        href="https://docs.nerf.studio"
-        size="small"
-      >
-        Documentation
-      </Button>
+
+
+
       <ViewportControlsModal />
 
       <div className="banner-logo">
         <img
           style={{ height: 30, margin: 'auto' }}
-          src="https://docs.nerf.studio/en/latest/_images/logo-dark.png"
+
+
+          src= {img}
+
           alt="The favicon."
         />
       </div>

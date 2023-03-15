@@ -6,7 +6,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100%;
-  overflow: hidden;
 }
 
 code {
@@ -17,14 +16,15 @@ code {
 .App {
   position: relative;
   height: 100vh;
+
 }
 
 $base-color1: #292d39;
 $base-color2: #222831;
 $base-color3: #393e46;
-$accent-color1: #db5200;
-$accent-color2: #ff8600;
-$accent-color3: #ffd369;
+$accent-color1: #1C73E7FF;
+$accent-color2: #1c73e7;
+$accent-color3: #1C73E7FF;
 $highlight-color1: #606980;
 $highlight-color2: #eeeeee;
 $highlight-color3: #ffffff;
@@ -57,6 +57,8 @@ $highlight-color3: #ffffff;
   left: 0;
   right: 0;
   bottom: 0;
+  overflow-y: hidden; /* Hide vertical scrollbar */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
 $SidePanel-width: 400px;
@@ -73,7 +75,8 @@ $custom-border: solid 1px $base-color1;
   border: $custom-border;
   z-index: 999;
   text-align: center;
-  overflow-y: scroll;
+  overflow-y: hidden; /* Hide vertical scrollbar */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
 .Leva-container > div {
@@ -83,8 +86,10 @@ $custom-border: solid 1px $base-color1;
   padding: 10px;
 }
 
-.simple-tabpanel-0 {
+
+.simple-tabpanel-1 {
   padding: 100px;
+  background: #1c73e7;
 }
 
 .Scene-container {
@@ -132,8 +137,8 @@ $sidebar-width: 100% !default;
   padding: 10px;
 }
 
-.StatusPanel .StatusPanel-button {
-  margin-bottom: 4px;
+.StatusPanel .StatusPanel-button-group {
+  margin: 10px;
 }
 
 .StatusPanel .StatusPanel-hide-scene-button {
@@ -348,7 +353,7 @@ $sidebar-width: 100% !default;
 // Viewer Window
 
 .canvas-container-main,
-.RenderWindow,
+.WebRTCVideo,
 .ViewerWindow-render-crop-container {
   position: absolute;
   top: 0px;
@@ -358,7 +363,7 @@ $sidebar-width: 100% !default;
   border: $custom-border;
 }
 
-.RenderWindow {
+.WebRTCVideo {
   z-index: 1;
 }
 
@@ -371,6 +376,12 @@ $sidebar-width: 100% !default;
 
 .canvas-container-main {
   z-index: 3;
+}
+
+.WebRTCVideo-video {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
 }
 
 .ViewerWindow-render-crop {
@@ -427,4 +438,88 @@ $viewer_button_size: 50px;
 .ExportModal-button {
   // margin: 15px;
   padding: 20px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 499px;
+  height: 299px;
+  background: #f1f1f1;
+  margin: 100px auto 0;
+  word-break: break-all;
+  border: 20px solid rgba(0, 0, 0, 0.274);
+  padding: 30px 30px 30px 30px;
+}
+
+.bloc-tabs {
+  border: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 16px 16px 1px 16px;
+  gap: 12px;
+  border-radius: 4px;
+  .active-tabs{
+    background-color: #4D4D4D;
+  }
+
+}
+.tabs {
+  padding: 30px 30px 30px 30px;
+  text-align: center;
+  width: 50%;
+  background: rgba(128, 128, 128, 0.075);
+  cursor: pointer;
+  border-bottom: 10px solid rgba(0, 0, 0, 0.274);
+  box-sizing: content-box;
+  position: relative;
+  outline: none;
+}
+
+
+
+
+
+button {
+  border: 10px;
+  padding: 30px 30px 30px 30px;
+
+}
+.content-tabs {
+  flex-grow : 1;
+  padding: 8px 16px 16px 16px;
+}
+.content {
+  background: #4D4D4D;
+  padding: 10px 10px 10px 10px;
+  width: 100%;
+  height: 100%;
+  display: none;
+
+}
+.content h2 {
+  padding: 10px 10px 10px 10px;
+}
+.content hr {
+  width: 100px;
+  height: 2px;
+  background: #222;
+  margin-bottom: 5px;
+}
+.content p {
+  width: 98%;
+  height: 98%;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+.active-content {
+  display: block;
+}
+
+.content li {
+  text-align: left;
+  display: block;
 }

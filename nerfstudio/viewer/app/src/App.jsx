@@ -3,7 +3,7 @@ import React from 'react';
 import {
   SceneTreeWebSocketListener,
   get_scene_tree,
-} from './modules/Scene/Scene';
+ } from './modules/Scene/Scene';
 
 import Banner from './modules/Banner';
 import { BasicTabs } from './modules/SidePanel/SidePanel';
