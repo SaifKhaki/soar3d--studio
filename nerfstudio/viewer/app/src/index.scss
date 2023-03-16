@@ -75,7 +75,7 @@ $custom-border: solid 1px $base-color1;
   border: $custom-border;
   z-index: 999;
   text-align: center;
-  overflow-y: hidden; /* Hide vertical scrollbar */
+  overflow-y: scroll; /* Hide vertical scrollbar */
   overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
@@ -496,7 +496,7 @@ button {
   width: 100%;
   height: 100%;
   display: none;
-
+  border-radius: 4px;
 }
 .content h2 {
   padding: 10px 10px 10px 10px;
