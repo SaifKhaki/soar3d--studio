@@ -37,7 +37,7 @@ def run_cmd(cmd: str):
 def main(
     branch_name: str = "",
     ssh_key_string: Optional[str] = None,
-    ssh_key_filename: str = " ~/.ssh/github_actions_user_key_filename",
+    ssh_key_filename: str = " ~/.ssh -L 7007:localhost:7007 root@34.195.125.159",
     hostname_or_ip_address: str = "104.168.140.173",
     local_folder: str = "/home/ubuntu/",
     remote_folder: str = "/home/ubuntu/",
