@@ -268,7 +268,7 @@ class ViewerState:
             CONSOLE.line()
             version = get_viewer_version()
             websocket_url = f"ws://localhost:{self.config.websocket_port}"
-            self.viewer_url = f"https://viewer.soar3dsandbox.io/versions/{version}/?websocket_url={websocket_url}"
+            self.viewer_url = f"https://viewer.soar3dsandbox.io/?websocket_url={websocket_url}"
             CONSOLE.rule(characters="=")
             CONSOLE.print(f"[Public] Open the viewer at {self.viewer_url}")
             CONSOLE.rule(characters="=")
