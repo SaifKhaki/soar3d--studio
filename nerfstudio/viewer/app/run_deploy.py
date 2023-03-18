@@ -38,11 +38,11 @@ def main(
     branch_name: str = "",
     ssh_key_string: Optional[str] = None,
     ssh_key_filename: str = " ~/.ssh/github_actions_user_key_filename",
-    hostname_or_ip_address: str = "34.102.68.79",
+    hostname_or_ip_address: str = "localhost",
     local_folder: str = "/home/eweb0124/build",
     remote_folder: str = "/home/eweb0124/viewer",
     host: str = "viewer_deploy_host",
-    user: str = "eweb0124",
+    user: str = "rxqbi",
     package_json_filename: str = "package.json",
     increment_version: str = "False",
 ):
