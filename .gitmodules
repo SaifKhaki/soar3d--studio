@@ -1,0 +1,3 @@
+[submodule "nerfstudio/viewer/app"]
+	path = nerfstudio/viewer/app
+	url = https://github.com/Soar-3D/app.git
