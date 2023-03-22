@@ -266,7 +266,6 @@ class ViewerState:
             )
             # TODO(ethan): log the output of the viewer bridge server in a file where the training logs go
             CONSOLE.line()
-            version = get_viewer_version()
             websocket_url = f"ws://localhost:{self.config.websocket_port}"
             self.viewer_url = f"https://viewer.soar3dsandbox.io/?websocket_url={websocket_url}"
             CONSOLE.rule(characters="=")
