@@ -36,7 +36,7 @@ CONSOLE = Console()
 def run_viewer_bridge_server_as_subprocess(
     websocket_port: int,
     zmq_port: Optional[int] = None,
-    ip_address: str = "socket.soar3dsandbox.io",
+    ip_address: str = "127.0.0.1",
     log_filename: Union[str, None] = None,
 ):
     """Runs the viewer bridge server as a subprocess.
